@@ -1,68 +1,45 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-Plugin 'user/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-
+" Vundle stuff
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Plugin 'kchmck/vim-coffee-script'
-
-syntax enable
-filetype plugin on
-Plugin 'godlygeek/tabular'
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'Buffergator'
+Plugin 'MarkdownFootnotes'
+Plugin 'bling/vim-airline'
+Bundle 'ntpeters/vim-better-whitespace'
 Plugin 'plasticboy/vim-markdown'
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+Plugin 'kchmck/vim-coffee-script'
+filetype plugin indent on
 
-" Always show statusline
+" Airline config
+let g:airline_powerline_fonts = 1
 set laststatus=2
 
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
+" Press F2 to paste without messing up indentation
+set pastetoggle=<F2>
 
-set nu
+" various editor settings
 syntax on
-
+set nu
+set lazyredraw
+set incsearch
+set hlsearch
+" Turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+" Turn off skipping folded lines vertically
+nnoremap j gj
+nnoremap k gk
 set smartindent
-set tabstop=2
 set shiftwidth=2
 set expandtab
+
+" Auto resize splits after window resize
+augroup Misc
+    autocmd!
+    autocmd VimResized * exe "normal! \<c-w>="
+augroup END
+
