@@ -51,6 +51,7 @@ plugins=(git)
 
 export PATH="/home/jack/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/opt/opencascade/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH=/home/jack/.gem/ruby/2.2.0/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,3 +100,10 @@ alias ivm="vim"
 alias subl="subl >/dev/null 2>&1"
 
 alias t='python2 ~/git/tasks/t/t.py --task-dir ~/git/tasks --list tasks'
+
+alias cs3500="ssh -p 62122 sysadmin@vps.cs.wmich.edu"
+alias yakko="ssh jack@yakko.cs.wmich.edu"
+alias digi="ssh jack@rhinoceraptor.info"
+alias myakko="mosh jack@yakko.cs.wmich.edu"
+alias logincs="ssh jfz1413@login.cs.wmich.edu"
+
