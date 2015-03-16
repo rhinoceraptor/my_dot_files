@@ -98,3 +98,4 @@ alias ls="ls -lA"
 alias ivm="vim"
 alias subl="subl >/dev/null 2>&1"
 
+alias t='python2 ~/git/tasks/t/t.py --task-dir ~/git/tasks --list tasks'
