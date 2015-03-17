@@ -5,13 +5,14 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+set t_Co=256
+set background=dark
+
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'Buffergator'
-Plugin 'MarkdownFootnotes'
 Plugin 'bling/vim-airline'
 Bundle 'ntpeters/vim-better-whitespace'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'kchmck/vim-coffee-script'
 filetype plugin indent on
 
@@ -42,4 +43,17 @@ augroup Misc
     autocmd!
     autocmd VimResized * exe "normal! \<c-w>="
 augroup END
+
+" Automatically strip trailing whitespace on write
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Save undo and swp in a convenient location
+set undofile
+set undodir=~/.vim/tmp/undo//
+set dir=~/.vim/tmp/swp//
+
+" Convenient whitespace marking
+set list
+set listchars=tab:>\ ,eol:¬
+set scrolloff=5
 
