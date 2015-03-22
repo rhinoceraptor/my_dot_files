@@ -1,0 +1,12 @@
+[alias]
+  co = checkout
+  c = commit
+  s = status
+  b = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  d = diff
+[user]
+	email = rhinoceraptor@gmail.com
+	name = Jack Lewis
+[core]
+	editor = vim

@@ -91,9 +91,12 @@ precmd()
 # OS X like open command using xdg-open
 alias open="xdg-open >/dev/null 2>&1"
 alias sl="ls"
-alias ls="ls -lA"
+alias ls="ls --color=auto --group-directories-first"
 alias ivm="vim"
+alias v="vim"
 alias subl="subl >/dev/null 2>&1"
 
-alias t='python2 ~/git/tasks/t/t.py --task-dir ~/git/tasks --list tasks'
-
+alias cs3500="ssh -p 62122 sysadmin@vps.cs.wmich.edu"
+alias yakko="ssh jack@yakko.cs.wmich.edu"
+alias vps="ssh jack@rhinoceraptor.info"
+alias myakko="mosh jack@yakko.cs.wmich.edu"
