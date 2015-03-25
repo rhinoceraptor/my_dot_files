@@ -54,6 +54,10 @@ class Powerline:
         'default': {
             'separator': '⮀',
             'separator_thin': '⮁'
+        },
+        'mac': {
+          'separator': '\uE0B0',
+          'separator_thin': '\uE0b1'
         }
     }
     LSQESCRSQ = '\\[\\e%s\\]'
