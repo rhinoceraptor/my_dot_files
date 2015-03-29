@@ -6,6 +6,7 @@
   b = branch
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   d = diff
+  aa = add -A
 [user]
 	email = rhinoceraptor@gmail.com
 	name = Jack Lewis
