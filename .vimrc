@@ -8,12 +8,14 @@ call vundle#rc()
 set t_Co=256
 set background=dark
 
+
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'Buffergator'
 Plugin 'bling/vim-airline'
 Bundle 'ntpeters/vim-better-whitespace'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'digitaltoad/vim-jade'
 filetype plugin indent on
 
 " Airline config
@@ -57,3 +59,5 @@ set list
 set listchars=tab:>\ ,eol:¬
 set scrolloff=5
 
+" Mice are cool
+set mouse=a

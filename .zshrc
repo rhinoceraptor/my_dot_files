@@ -96,7 +96,3 @@ alias ivm="vim"
 alias v="vim"
 alias subl="subl >/dev/null 2>&1"
 
-alias cs3500="ssh -p 62122 sysadmin@vps.cs.wmich.edu"
-alias yakko="ssh jack@yakko.cs.wmich.edu"
-alias vps="ssh jack@rhinoceraptor.info"
-alias myakko="mosh jack@yakko.cs.wmich.edu"
