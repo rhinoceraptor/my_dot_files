@@ -1,13 +1,15 @@
 " Vundle stuff
 set nocompatible
 filetype off
-
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+"colorscheme railscasts
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 set t_Co=256
 set background=dark
-
 
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree.git'
@@ -15,7 +17,7 @@ Plugin 'Buffergator'
 Plugin 'bling/vim-airline'
 Bundle 'ntpeters/vim-better-whitespace'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'digitaltoad/vim-jade'
+Plugin 'tmux-plugins/vim-tmux'
 filetype plugin indent on
 
 " Airline config
@@ -59,5 +61,12 @@ set list
 set listchars=tab:>\ ,eol:¬
 set scrolloff=5
 
-" Mice are cool
 set mouse=a
+
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+
+autocmd VimEnter * call StartUp()
