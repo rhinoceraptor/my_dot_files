@@ -1,10 +1,7 @@
 " Vundle stuff
 set nocompatible
 filetype off
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
-"colorscheme railscasts
+colorscheme jellybeans
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -14,7 +11,7 @@ set background=dark
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'Buffergator'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 Bundle 'ntpeters/vim-better-whitespace'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tmux-plugins/vim-tmux'
@@ -61,8 +58,12 @@ set list
 set listchars=tab:>\ ,eol:¬
 set scrolloff=5
 
+" Enable mouse
 set mouse=a
 
+"Set tab display width to 2 spaces
+set tabstop=2
+" Show NERDTree automatically in the pwd if vim called with no arguments
 function! StartUp()
     if 0 == argc()
         NERDTree
@@ -70,3 +71,12 @@ function! StartUp()
 endfunction
 
 autocmd VimEnter * call StartUp()
+let NERDTreeShowHidden=1
+
+" Vim Powerline plugin
+let $PYTHONPATH='/usr/lib/python3.4/site-packages'
+" Fix time out length to not wait excessively long switching to normal mode
+set timeoutlen=1000 ttimeoutlen=0
+
+cnoremap sudow w !sudo tee % >/dev/null
+
