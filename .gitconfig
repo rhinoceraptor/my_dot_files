@@ -2,13 +2,22 @@
   co = checkout
   a = add
   c = commit
-  s = status
+  s = status -s
   b = branch
+  up = pull
+  p = push
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  d = diff
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
   aa = add -A
+  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  ll = log --oneline --graph
 [user]
-	email = rhinoceraptor@gmail.com
-	name = Jack Lewis
+  email = rhinoceraptor@gmail.com
+  name = Jack Lewis
 [core]
-	editor = vim
+  editor = vim
+[color]
+  ui = always
+[push]
+  default = current
+
