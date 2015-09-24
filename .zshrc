@@ -1,15 +1,6 @@
 
+# Colors
 export TERM='xterm-256color'
-#function _update_ps1()
-#{
-#  export PROMPT="$(~/.powerline-zsh.py --cwd-only $?)"
-#}
-#precmd()
-#{
-#  _update_ps1
-#}
-
-. /usr/share/zsh/site-contrib/powerline.zsh
 
 # ZSH completion
 autoload -U compinit
@@ -24,6 +15,7 @@ HISTSIZE=2000
 HISTSAVE=2000
 SAVEHIST=HISTSIZE
 
+# Various ZSH settings
 setopt BANG_HIST
 setopt EXTENDED_HISTORY
 setopt INC_APPEND_HISTORY
@@ -53,3 +45,20 @@ bindkey '^n' down-history
 
 # Speed up key sequences
 KEYTIMEOUT=1
+
+# Load antigen
+source ~/git/conf/antigen/antigen.zsh
+
+# Antigen packages
+antigen-bundle extract
+antigen-bundle git
+antigen-bundle pip
+antigen-bundle tmuxinator
+
+# syntax highlighting must be last to prevent pwd
+# indicator from going off screen
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply

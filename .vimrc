@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 colorscheme jellybeans
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 set t_Co=256
